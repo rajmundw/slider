@@ -1,0 +1,27 @@
+span {
+    transform: rotate(90deg); }
+
+td {
+    text-align: center; }
+
+.before {
+    float: left;
+    transform: rotate(180deg); }
+
+.month-year {
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px; }
+
+.after {
+    float: left; }
+
+.month-year-parent {
+    display: flex;
+    justify-content: center; }
+.calendar-container{
+    display: none;
+}
+.calendar-container-visivle{
+    display: block;
+}
