@@ -1,3 +1,5 @@
+
+
 const pagination = (categoryContainer,hushMapContainer,activePage) =>{
     let tableHead=''
     let ul=''
@@ -98,7 +100,7 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
             slideBarLeft.style.display = 'block'
         } else if (currentTranslation === "translateX(-66.66%)") {
             slideBarRight.style.display = 'block'
-            slideBarRight.style.display = 'none'
+            slideBarLeft.style.display = 'none'
         }
     }
 
