@@ -26,13 +26,14 @@ const hideMenuOptions=(openedMenuDiv)=>{
     }
 
     if(document.getElementById('dataInput')){
-        document.getElementById('dataInput').disabled="none"
         const containerAddInput=document.getElementById('containerAddInputs')
         containerAddInput.childNodes.forEach(element=>{
             element.style.display="flex"
         })
-        document.getElementById('calendar').style.display='none'
-        dataInput.disabled=""
+        if(document.getElementById('calendar')){
+            document.getElementById('calendar').style.display='none'
+        }
+        document.getElementById('dataInput').disabled=""
     }
 }
 

@@ -84,7 +84,8 @@ const createHushMapLayout=(newCategory,categoryArray,categoryNodeList,initialInp
     }
 
     if(hushMapContainer.classList.contains('initial')) {
-
+        document.querySelector('.initial-inputs-container').classList.remove('initial-inputs-animation')
+        document.querySelector('.initial-inputs-container').style.transform="translateY(0)"
         hushMapContainer.classList.remove('initial')
         if(window.innerWidth<=300){
             document.querySelector('.page-container').style.minHeight="901px"
