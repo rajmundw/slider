@@ -120,7 +120,7 @@ class App extends React.Component{
             element.style.display="flex"
         })
         document.getElementById('calendar').style.display='none'
-        document.getElementById('dataInput').style.display="block"
+        document.querySelector('.add-category').style.display="block"
     }
 
     calendar(){

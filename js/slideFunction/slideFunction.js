@@ -2,9 +2,11 @@ const slideFunction = () =>{
     const slideBarLeft=document.querySelector('.left-slide-bar')
     const slideBarRight=document.querySelector('.right-slide-bar')
 
+
     slideBarLeft.addEventListener("touchstart",()=>{
         const categoryContainer =  document.querySelector('.category-container')
         const currentTranslation=categoryContainer.style.transform
+        // add animation class
         categoryContainer.classList.add("slide-animation")
 
         const photos=document.querySelectorAll('#photo')
@@ -31,6 +33,8 @@ const slideFunction = () =>{
             trush.style.width="33.33%"
         })
 
+
+        //slide steps
         if(!currentTranslation || currentTranslation==="translateX(0%)") {
             categoryContainer.style.transform="translateX(-33.33%)"
             photos.forEach(photo=>{
@@ -40,6 +44,7 @@ const slideFunction = () =>{
                 trush.style.transform=`translateX(100%)`
             })
 
+            // nav to slide handler
             setTimeout(()=>{
                 slideBarRight.style.display='block'
             },1500)
@@ -86,9 +91,8 @@ const slideFunction = () =>{
 
         const categoryContainer =  document.querySelector('.category-container')
         const currentTranslation=categoryContainer.style.transform
-        console.log(typeof currentTranslation)
 
-
+        //slide steps
         if(currentTranslation==="translateX(-66.66%)") {
             categoryContainer.style.transform="translateX(-33.33%)"
             photos.forEach(photo=>{
@@ -97,7 +101,7 @@ const slideFunction = () =>{
             trushes.forEach(trush=>{
                 trush.style.transform=`translateX(100%)`
             })
-
+            // nav to slide handler
             setTimeout(()=>{
                 slideBarLeft.style.display='block'
             },1500)
@@ -109,6 +113,7 @@ const slideFunction = () =>{
             trushes.forEach(trush=>{
                 trush.style.transform=`translateX(0%)`
             })
+            // nav to slide handler
             setTimeout(()=>{
                 slideBarRight.style.display='none'
             },1500)

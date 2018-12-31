@@ -1,7 +1,41 @@
+import numberOfPages from '../hushMapLayout/numberOfpages'
 const resizeFunction = () =>{
 
-
     window.addEventListener('resize',()=>{
+
+
+
+        if(window.innerWidth>300 && window.innerWidth<=570){
+            if(window.innerHeight>706){
+                //if device has higher screen height than 706 set screen heigh as height page container
+                document.querySelector('.page-container').style.height=`${window.innerHeight}px`
+
+                if(document.querySelector(".category-container")){
+                    const categoryContainer=document.querySelector(".category-container")
+                    // run function to set proper number of pages
+                    numberOfPages(categoryContainer)
+                }
+            }
+        }else if(window.innerWidth<=300){
+
+            if(document.querySelector(".category-container")){
+
+                const ulArray=document.querySelector(".category-container").childNodes
+                const ulVisibileElement=[...ulArray].map(li=>{
+                    if(li.style.display!=="block"){
+                        return li
+                    }
+                })
+                //run function if layout has more than 5 list element
+                if(ulVisibileElement.length>6){
+                    const categoryContainer=document.querySelector(".category-container")
+                    numberOfPages(categoryContainer)
+                }
+            }
+        }
+
+
+        //small mobile layout slide and high propeities on resize
         if(window.innerWidth<=300){
             if(document.querySelector('.category-container') && document.querySelector('.category-container').style.transform) {
                 const photos = document.querySelectorAll('#photo')
@@ -20,7 +54,9 @@ const resizeFunction = () =>{
             if(!document.getElementById('hush-map').classList.contains('initial')){
                 document.querySelector('.page-container').style.minHeight="901px"
             }
-        }else if(window.innerWidth>300 && window.innerWidth<570){
+        }
+        //mobile layout slide and high propeities on resize
+        else if(window.innerWidth>300 && window.innerWidth<570){
             if(document.querySelector('.category-container') && document.querySelector('.category-container').style.transform) {
                 const photos = document.querySelectorAll('#photo')
                 photos.forEach(photo => {

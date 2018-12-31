@@ -6,18 +6,21 @@ import {initialInputsContainer} from '../newCategory/createNewCategory'
 import updateHushMapLayout from './updateHushMapLayout'
 
 const createMenuToManagePhotoDetailsList = (selectCategory,selectTypeOfSorting,deleteCategoryButton,addNewElementToCategoryButton,newCategory) =>{
-    let arrayToReturn=[]
+    let inputsAndButtonsToHandlerLayout=[]
 
+    //create elements
     selectCategory=document.createElement('select')
     selectTypeOfSorting=document.createElement('select')
     deleteCategoryButton=document.createElement('button')
     addNewElementToCategoryButton=document.createElement('button')
 
+    //set class
     selectCategory.classList.add('category-select')
     selectTypeOfSorting.classList.add('sorting-select')
     deleteCategoryButton.classList.add('delete-category')
     addNewElementToCategoryButton.classList.add('add-category')
 
+    //set events
     selectCategory.addEventListener('change',(event)=>{
         updateHushMapLayout(event,selectTypeOfSorting)
     })
@@ -35,6 +38,7 @@ const createMenuToManagePhotoDetailsList = (selectCategory,selectTypeOfSorting,d
 
     })
 
+    //set value of elements
     const innerButtonToDeleteText=document.createTextNode('Delete category')
 
     deleteCategoryButton.appendChild(innerButtonToDeleteText)
@@ -51,7 +55,6 @@ const createMenuToManagePhotoDetailsList = (selectCategory,selectTypeOfSorting,d
 
     const optionTypeOfSortSize = document.createElement('option')
 
-    // add inner text (category name) to option
     let optionSortingText=document.createTextNode('')
     randomSortOption.appendChild(optionSortingText)
 
@@ -84,12 +87,14 @@ const createMenuToManagePhotoDetailsList = (selectCategory,selectTypeOfSorting,d
     selectTypeOfSorting.appendChild(optionTypeOfSortCreated)
     selectTypeOfSorting.appendChild(optionTypeOfSortSize)
 
-
+    // element which display on add new Category if (!initialLayout)
     const backToMenuElement=document.createElement('div')
     backToMenuElement.innerText='back'
     backToMenuElement.style.display='none'
     backToMenuElement.classList.add('back-to-menu-from-add-category')
 
+
+    // element which display on add new element if (!initialLayout)
     const backToMenuElement2=document.createElement('div')
     backToMenuElement2.innerText='back'
     backToMenuElement2.style.display='none'
@@ -98,6 +103,7 @@ const createMenuToManagePhotoDetailsList = (selectCategory,selectTypeOfSorting,d
 
     backToMenuElement.addEventListener('touchstart',()=>{
         const openedMenuDiv=document.querySelector('.opened-menu')
+        //only li element inside menu visible
         openedMenuDiv.children[0].childNodes.forEach(element=>{
             element.style.display='none'
             if(element.nodeName==="LI"){
@@ -109,15 +115,19 @@ const createMenuToManagePhotoDetailsList = (selectCategory,selectTypeOfSorting,d
 
     backToMenuElement2.addEventListener('touchstart',()=>{
         const openedMenuDiv=document.querySelector('.opened-menu')
+        //only li element inside menu visible
         openedMenuDiv.children[0].childNodes.forEach(element=>{
             element.style.display='none'
             if(element.nodeName==="LI"){
                 element.style.display="block"
             }
         })
+        // sent innerText for add new category button
         document.querySelector('.add-category').innerText="Add new Element"
     })
 
+
+    //set display and append ass next sibling li element in ul in menu div
     initialInputsContainer[0].style.display='none'
     const addCategoryOpenedMenu=document.querySelector("#menu-list-new-category")
     addCategoryOpenedMenu.parentNode.insertBefore(backToMenuElement, addCategoryOpenedMenu.nextSibling)
@@ -141,9 +151,10 @@ const createMenuToManagePhotoDetailsList = (selectCategory,selectTypeOfSorting,d
     deleteOpenedMenu.parentNode.insertBefore(deleteCategoryButton, deleteOpenedMenu.nextSibling)
 
 
-    arrayToReturn.push(selectCategory,selectTypeOfSorting,deleteCategoryButton,addNewElementToCategoryButton)
+    inputsAndButtonsToHandlerLayout.push(selectCategory,selectTypeOfSorting,deleteCategoryButton,addNewElementToCategoryButton)
 
-    return arrayToReturn
+    //use in createHushMapLayout
+    return inputsAndButtonsToHandlerLayout
 }
 
 export default createMenuToManagePhotoDetailsList
