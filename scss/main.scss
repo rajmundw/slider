@@ -144,7 +144,7 @@ li{
       height: 100%;
       overflow: hidden;
       .category-container{
-        height: 310px;
+        min-height: 310px;
         margin-top: 10px;
         width: 300%;
         margin-bottom: 50px;
@@ -210,6 +210,13 @@ li{
               }
             }
           }
+          #emptyCategory{
+            width: 33.33%;
+            font-size: 30px;
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+            color:red
+          }
         }
       }
       .changing-page{
@@ -238,7 +245,7 @@ li{
         font-weight: 700;
         text-align: center;
         margin-top: 8vh;
-        margin-bottom: calc(10vh - 31px);
+        margin-bottom: calc(8vh - 31px);
         div {
           float: left;
           margin-right: 2px;
@@ -251,7 +258,7 @@ li{
         display: flex;
         justify-content: center;
         margin-top: 90px;
-        margin-bottom: 60px;
+        padding-bottom: 60px;
         .page-numbers-parent {
 
           .active-page {
@@ -331,6 +338,7 @@ li{
         }
         .initial-inputs-container {
           margin-bottom: 0vh;
+          position: relative;
           .category-label {
             font-family: 'Amatic SC', cursive;
             font-weight: 700;
@@ -338,7 +346,7 @@ li{
             margin-top: 0px;
             color: white;
             input {
-              border-bottom: white solid 1px;
+              border-bottom: white solid 1.05px;
               font-size: 20px;
               color: white;
             }
@@ -356,10 +364,8 @@ li{
             }
           }
           .search-button-container {
-            margin-top: 10px;
             position: inherit;
-            left: 0%;
-            margin-bottom: 10px;
+            top: 10px;
             .search-button {
               background: black;
               border: 1px solid white;
@@ -511,6 +517,7 @@ li{
         }
       }
       .search-button-container {
+        width: 100%;
         position: absolute;
         bottom: -22vh;
         display: flex !important;
@@ -610,13 +617,14 @@ li{
     }
   }
   .parent-page-numbers-parent {
-    margin-bottom: 70px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
   }
   .page-container{
   }
   #hush-map{
     .category-container{
-      height: 470px;
+      min-height: 470px;
       ul{
         margin-top: 70px;
         #photo{

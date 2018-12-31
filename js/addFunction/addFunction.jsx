@@ -15,11 +15,15 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
 
     if(event.target.innerText!=="Submit") {
         event.target.innerText="Submit"
+
+        // if add input does not exist
         if(!document.getElementById('containerAddInputs')) {
+
             const hushMapContainer = document.querySelector('#hush-map')
 
             let labelText=document.createTextNode('Created data')
 
+            // create inputs and labels
             const dataLabel=document.createElement('label')
             dataLabel.appendChild(labelText)
 
@@ -28,26 +32,34 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
 
             const dataInput = document.createElement('input')
             dataInput.id = 'dataInput'
-            dataInput.addEventListener('click',()=>{
-                const dataInputLabel=document.querySelector('#dataInput').parentNode
 
+            // add  event on click
+            dataInput.addEventListener('click',()=>{
+
+                const dataInputLabel=document.querySelector('#dataInput').parentNode
                 dataInputLabel.parentNode.insertBefore(calendarDiv, dataInputLabel.nextSibling)
 
+                // if calendar element does not exist render it
                 if(!document.getElementById('calendar1')){
                     ReactDOM.render(<Calendar/>, document.getElementById('calendar'));
                 }
+
                 dataInput.disabled="disabled"
                 const openedMenuDiv=document.querySelector('.opened-menu')
+                //hidden all menu ul elements
                 openedMenuDiv.children[0].childNodes.forEach(element=>{
                     element.style.display='none'
                 })
 
 
                 const containerAddInput=document.getElementById('containerAddInputs')
+                //make a visible
                 containerAddInput.style.display="block"
+                //hidden all containerAddInput elements
                 containerAddInput.childNodes.forEach(element=>{
                     element.style.display="none"
                 })
+                //make visible
                 document.getElementById('calendar').style.display="block"
 
             })
@@ -55,8 +67,6 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
 
 
             dataLabel.appendChild(dataInput)
-
-
 
             const widthLabel=document.createElement('label')
             labelText=document.createTextNode('Element width')
@@ -115,6 +125,7 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
         document.getElementById('containerAddInputs').nextSibling.style.display='block'
 
     }else{
+
         const likesValue=document.getElementById('likesInput').value
         const widthValue=document.getElementById('widthInput').value
         const heightValue=document.getElementById('heightInput').value
@@ -127,6 +138,8 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
         document.getElementById('heightInput').value=''
         document.getElementById('dataInput').value=''
 
+
+        //list with elements id
         let idArray=[]
         categoryNodeList.forEach(category=>{
             if(category.id===categoryName){
@@ -135,14 +148,16 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
                 })
             }
         })
-
+        //sort
         idArray.sort((a,b)=>{
             return a-b
         })
-        console.log(idArray)
 
+        //create new id it is equal to last id number +1
         const idCounterUlElement=Number(idArray[idArray.length-1])+1
 
+
+        //create new element
         const ul=document.createElement('ul')
         ul.setAttribute('id',idCounterUlElement)
 
@@ -172,7 +187,7 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
         deleteElement.id='delete'
         deleteSymbol.id='delete-element'
 
-
+        //add event to delete symbol
         deleteSymbol.addEventListener('click',(event)=>{
             deleteCategoryElement(event,selectCategory,selectTypeOfSorting,deleteCategoryButton,addNewElementToCategoryButton)
         })
@@ -180,17 +195,24 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
         deleteElement.appendChild(deleteSymbol)
         ul.appendChild(deleteElement)
 
+        // add element to cateogryNodeList
         categoryNodeList.forEach(category=>{
             if(category.id===categoryName){
+
+                if(category.classList.contains('empty')){
+                    category.classList.remove('empty')
+                    document.querySelector('#emptyCategory').parentElement.remove()
+                }
                 category.appendChild(ul)
                 numberOfPages(category,event,'addNewElement')
             }
         })
+        // set inner text for button
         event.target.innerText="Add new Element"
         document.getElementById('containerAddInputs').style.display="none"
 
+        // make ul elements visivle
         openedMenuDiv.childNodes[1].childNodes.forEach(element=>{
-
             element.style.display='none'
             if(element.nodeName==="LI"){
                 element.style.display='block'
@@ -199,6 +221,7 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
 
     }
 
+    //run sort function to have proper element list on current typeo of sorting
     sortFunction(event,selectCategory,typeOfSotring)
 
 }

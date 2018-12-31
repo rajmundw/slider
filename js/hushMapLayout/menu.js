@@ -1,5 +1,5 @@
 import {selectCategory,selectTypeOfSorting,deleteCategoryButton,addNewElementToCategoryButton} from './createHushMapLayout'
-import {categoryArray,arrayFromCreateHushMapLayout,initialInputsContainer} from '../newCategory/createNewCategory'
+import {categoriesArray,arrayFromCreateHushMapLayout,initialInputsContainer} from '../newCategory/createNewCategory'
 import hideMenuOptions from '../hideMenuOptions/hideMenuOptions'
 import menuEvent from './menuEvent'
 
@@ -16,28 +16,33 @@ const menuHandler = () =>{
 
     menu.addEventListener('touchstart',menuEvent)
 
+
+    //remove other element than li dom element
     openedMenuDiv.childNodes[1].childNodes.forEach(element=>{
         if(element.nodeName!=="LI"){
             element.remove()
         }
     })
 
-    console.log(openedMenuDiv.childNodes[1].childNodes)
 
     openedMenuDiv.childNodes[1].childNodes.forEach(li=>{
         switch (li.id){
             case "menu-list-new-category":{
                 li.addEventListener('click',()=>{
+                    // it work if layout is not initial
                    if(!document.querySelector('#hush-map').classList.contains('initial')) {
-
+                       //if this element visible, to hide
                        if (document.querySelector('.initial-inputs-container').style.display==='block') {
                            document.querySelector('.initial-inputs-container').style.display='none'
                        } else {
+                           //hide other elements
                            hideMenuOptions(openedMenuDiv)
-                           console.log( openedMenuDiv.children[0])
                            openedMenuDiv.children[0].childNodes.forEach(element=>{
                                element.style.display='none'
                            })
+
+                           //make next siblings visible
+                           //this element visible
                            const inputsContainer=li.nextSibling
                            inputsContainer.style.display='block'
                            inputsContainer.nextSibling.style.display='block'
@@ -50,7 +55,8 @@ const menuHandler = () =>{
                 li.addEventListener('click',()=>{
                     console.log(li.nextSibling)
 
-                    if(categoryArray.length>0){
+                    //it work if exists cateogries work like above
+                    if(categoriesArray.length>0){
                         if(document.querySelector('.category-select').style.display==='block'){
                             document.querySelector('.category-select').style.display='none'
                         }else{
@@ -64,7 +70,8 @@ const menuHandler = () =>{
             }
             case "menu-list-sort":{
                 li.addEventListener('click',()=>{
-                    if(categoryArray.length>0){
+                    //it work if exists categories  work like first case
+                    if(categoriesArray.length>0){
                         if(document.querySelector('.sorting-select').style.display==='block'){
                             document.querySelector('.sorting-select').style.display='none'
                         }else{
@@ -78,8 +85,10 @@ const menuHandler = () =>{
             }
             case "menu-list-add":{
                 li.addEventListener('click',()=>{
-                    if(categoryArray.length>0){
+                    //it work if exists categories
+                    if(categoriesArray.length>0){
                         if(document.querySelector('.add-category').style.display==='block'){
+                            //hide everyone chlidren add-cotegory element and this element
                             if(document.querySelector('#containerAddInputs')){
                                 document.querySelector('#containerAddInputs').style.display='none'
                             }
@@ -94,11 +103,13 @@ const menuHandler = () =>{
 
                             document.querySelector('.add-category').style.display='none'
                         }else{
+                            //hide other ul elements
                             openedMenuDiv.childNodes[1].childNodes.forEach(element=>{
                                 if(element.nodeName!=="LI"){
                                     element.style.display='none'
                                 }
                             })
+                            //show this element and next sibling
                             const inputsContainer=li.nextSibling
                             inputsContainer.style.display='block'
 
@@ -108,8 +119,9 @@ const menuHandler = () =>{
                 break;
             }
             case "menu-list-delete":{
+                //it work if exists categories  work like first case
                 li.addEventListener('click',()=>{
-                    if(categoryArray.length>0){
+                    if(categoriesArray.length>0){
                         if(document.querySelector('.delete-category').style.display==='block'){
                             document.querySelector('.delete-category').style.display='none'
                         }else{

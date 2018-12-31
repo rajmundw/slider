@@ -17,6 +17,8 @@ const getFunction =()=>{
 
         // call function and get two parameters from input
         newCategory(inputCategoryValue,numberOfElements)
+
+        //reset inputs
         inputCategory.value=''
         inputNumberOfElements.value=''
 
