@@ -24,12 +24,24 @@ const numberOfElementOnPage = () =>{
             numberOfElements=defaultNumberOfElements
             margitnBottomCategoryContainer=0
         }
-    }else if(window.innerWidth<=300){
-        // for small mobile only one option when visivile list ementy is equal 5
-        numberOfElements=defaultNumberOfElements
-        margitnBottomCategoryContainer=0
-    }
+    }else if(window.innerWidth<=300) {
 
+
+        lastLayoutElementBottomPostion=901
+        emptySpace=windowHeight-lastLayoutElementBottomPostion
+        const ulHeight=90
+
+        if(emptySpace>0){
+            const additionalElements=Math.floor(emptySpace/ulHeight)
+            // check how many element we can add to layout visible list
+            margitnBottomCategoryContainer=emptySpace-additionalElements*90
+            numberOfElements=defaultNumberOfElements+additionalElements
+        }else{
+            //if emptyspace < 0  defaul list visible element
+            numberOfElements=defaultNumberOfElements
+            margitnBottomCategoryContainer=0
+        }
+    }
     elementToReturn.push(numberOfElements,margitnBottomCategoryContainer)
 
     return elementToReturn

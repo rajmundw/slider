@@ -15,22 +15,21 @@ const resizeFunction = () =>{
                     // run function to set proper number of pages
                     numberOfPages(categoryContainer)
                 }
+            }else{
+                document.querySelector('.page-container').style.height=`${706}px`
             }
         }else if(window.innerWidth<=300){
+            if(window.innerHeight>901){
+                //if device has higher screen height than 706 set screen heigh as height page container
+                document.querySelector('.page-container').style.height=`${window.innerHeight}px`
 
-            if(document.querySelector(".category-container")){
-
-                const ulArray=document.querySelector(".category-container").childNodes
-                const ulVisibileElement=[...ulArray].map(li=>{
-                    if(li.style.display!=="block"){
-                        return li
-                    }
-                })
-                //run function if layout has more than 5 list element
-                if(ulVisibileElement.length>6){
+                if(document.querySelector(".category-container")){
                     const categoryContainer=document.querySelector(".category-container")
+                    // run function to set proper number of pages
                     numberOfPages(categoryContainer)
                 }
+            }else{
+                document.querySelector('.page-container').style.height=`${901}px`
             }
         }
 

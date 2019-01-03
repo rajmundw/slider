@@ -244,8 +244,8 @@ li{
         font-family: 'Amatic SC', cursive;
         font-weight: 700;
         text-align: center;
-        margin-top: 8vh;
-        margin-bottom: calc(8vh - 31px);
+        margin-top: 20px;
+        margin-bottom: 10px;
         div {
           float: left;
           margin-right: 2px;
@@ -473,7 +473,6 @@ li{
       }
     }
     .initial-inputs-container {
-      margin-bottom: 35vh;
       .category-label {
         text-align: center;
         display: flex;
@@ -519,7 +518,6 @@ li{
       .search-button-container {
         width: 100%;
         position: absolute;
-        bottom: -22vh;
         display: flex !important;
         justify-content: center;
         .search-button {
@@ -530,7 +528,9 @@ li{
           font-size: 25px;
           font-family: 'Aguafina Script', cursive;
           padding-top: 7px;
+          /*
           visibility: hidden;
+          */
         }
       }
 
@@ -595,6 +595,23 @@ li{
       font-size: 20px;
       display: flex;
       justify-content: center;
+    }
+    .search-button-container {
+      width: 100%;
+      position: absolute;
+      display: flex !important;
+      justify-content: center;
+      bottom: 70px;
+      .search-button {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Aguafina Script', cursive;
+        padding-top: 7px;
+        visibility: hidden;
+      }
     }
   }
 

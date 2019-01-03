@@ -4,6 +4,16 @@ const initialLayout=()=>{
     const inputsContainerHeight=inputsContainer[0].getBoundingClientRect().height
     const allDistanceToTransalte=inputsContainerTopOffset+inputsContainerHeight
 
+
+
+    if(window.innerWidth<=300 && window.innerHeight>901){
+        document.querySelector('.page-container').style.height=`${window.innerHeight}px`
+
+    }else if(window.innerWidth>300 && window.innerWidth<=570 && window.innerHeight>706){
+        document.querySelector('.page-container').style.height=`${window.innerHeight}px`
+
+    }
+
     //translate initial inputs to bacome hidden to animation
     inputsContainer[0].style.transform=`translateY(${-allDistanceToTransalte}px)`
 

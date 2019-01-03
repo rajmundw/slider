@@ -33,10 +33,18 @@ const createHushMapLayout=(newCategory,categoryArray,categoryNodeList,initialInp
 
     //create first hush map layout
     if(hushMapContainer.classList.contains('initial')){
+
+
+        //find search button
+        const button = document.querySelector('.search-button-container')
+        //push this button to initial buttons container
+        document.querySelector('.initial-inputs-container').appendChild(button)
+
         //remove initial inputs
         initialInputs=document.querySelector('.initial-inputs-container')
         document.querySelector('.initial-inputs-container').remove()
         document.querySelector('.intrance-info').remove()
+
 
 
         //create opened menu and set value of inputsAndButtonsArray on returned element from function
@@ -125,7 +133,9 @@ const createHushMapLayout=(newCategory,categoryArray,categoryNodeList,initialInp
 
         //set min height for page container because is biggest then height in initial layout
         if(window.innerWidth<=300){
-            document.querySelector('.page-container').style.minHeight="901px"
+            if(window.innerHeight>901){
+                document.querySelector('.page-container').style.height=`${window.innerHeight}px`
+            }
         }else if(window.innerWidth>300 && window.innerWidth<=570){
             if(window.innerHeight>706){
                 document.querySelector('.page-container').style.height=`${window.innerHeight}px`
