@@ -1,0 +1,29 @@
+table {
+  margin: auto;
+  .month-year-parent {
+    display: flex;
+    justify-content: space-between;
+  }
+  td {
+    text-align: center;
+  }
+  .before {
+    float: left;
+    transform: rotate(180deg);
+  }
+  .month-year {
+    float: left;
+  }
+
+  .after {
+    float: left;
+  }
+}
+
+li{
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
+}
+

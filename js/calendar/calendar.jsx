@@ -121,6 +121,7 @@ class App extends React.Component{
         })
         document.getElementById('calendar').style.display='none'
         document.querySelector('.add-category').style.display="block"
+        document.querySelector('.back-to-menu-from-add-element').style.display="block"
     }
 
     calendar(){

@@ -1,0 +1,30 @@
+@media (max-width: 570px) {
+
+  .slide-container {
+    z-index: 15;
+  }
+  .slide {
+    font-size: 35px;
+    display: none;
+    div:first-of-type {
+      text-align: right;
+    }
+    div{
+      height: 0px;
+
+    }
+  }
+}
+
+@media (min-width: 570px) and (max-width: 768px) {
+  .slide-container {
+    display: none;
+  }
+  .slide {
+    font-size: 35px;
+    display: none;
+    div:first-of-type {
+      text-align: right;
+    }
+  }
+}

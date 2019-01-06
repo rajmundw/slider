@@ -30,9 +30,8 @@ const updateHushMapLayout=(event,selectTypeOfSorting)=>{
             console.log(category,listToReplace)
             hushMapContainer.replaceChild(category,listToReplace)
 
-
             //run number of pages
-            numberOfpages(category)
+            numberOfpages(category,'adsasd',"update")
         }
     })
 }

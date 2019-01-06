@@ -42,19 +42,19 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
 
     }
     if(document.querySelector('.category-container')){
+
+        // push as first child category header
+        categoryContainer.insertBefore(ul, categoryContainer.childNodes[0])
         if(window.innerWidth<=300){
-            // push as first child category header
-            categoryContainer.insertBefore(ul, categoryContainer.childNodes[0])
 
             document.querySelector('.category-container').style.height=`${470+(numberOfElementsOnPage-5)*90}px`
-            document.querySelector('.parent-page-numbers-parent').style.marginTop=`${90+marginTop}px`
+            document.querySelector('.page-numbers-parent').style.marginTop=`${100+marginTop}px`
         }else if(window.innerWidth>300 && window.innerWidth<=570){
-
-            // push as first child category header
-            categoryContainer.insertBefore(ul, categoryContainer.childNodes[0])
-
             document.querySelector('.category-container').style.height=`${310+(numberOfElementsOnPage-5)*55}px`
-            document.querySelector('.parent-page-numbers-parent').style.marginTop=`${90+marginTop}px`
+            document.querySelector('.page-numbers-parent').style.marginTop=`${100+marginTop}px`
+        }else if(window.innerWidth>570 && window.innerWidth<=768){
+            document.querySelector('.category-container').style.height=`${700+(numberOfElementsOnPage-4)*155}px`
+            document.querySelector('.page-numbers-parent').style.marginTop=`${85+marginTop}px`
         }
     }
 

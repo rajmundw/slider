@@ -30,7 +30,15 @@
           display: block;
         }
       }
+      .col-all-#{$i}{
+        width: 100% * $i/12;
 
+        &:before, &:after{
+          content: '';
+          clear: both;
+          display: block;
+        }
+      }
       .col-mobile-#{$i}{
         @media (min-width: 301px) and  (max-width: 570px){
           width: 100% * $i/12;
@@ -45,16 +53,44 @@
         @media (min-width: 570px) and (max-width: 768px){
           width: 100% * $i/12;
         }
-      }
-      .col-laptop-#{$i}{
-        @media (min-width: 768px) and (max-width: 1400px){
-          width: 100% * $i/12;
+        &:before, &:after{
+          content: '';
+          clear: both;
+          display: block;
         }
       }
-      .col-other-#{$i}{
-        @media (max-width: 1400px){
+      .col-small-laptop-#{$i}{
+        @media (min-width: 768px) and (max-width: 1020px){
           width: 100% * $i/12;
         }
+        &:before, &:after{
+          content: '';
+          clear: both;
+          display: block;
+        }
+      }
+      .col-laptop-#{$i} {
+        @media (min-width: 1020px) and (max-width: 1400px) {
+          width: 100% * $i/12;
+        }
+        &:before, &:after{
+          content: '';
+          clear: both;
+          display: block;
+        }
+      }
+      .col-biggest-#{$i}{
+        @media (min-width: 1400px){
+          width: 100% * $i/12;
+        }
+        &:before, &:after{
+          content: '';
+          clear: both;
+          display: block;
+        }
+      }
+      .offset-col-all-#{$i}{
+          margin-left: 100% * $i/12;
       }
       .offset-col-small-mobile-#{$i}{
         @media (max-width: 301px){
@@ -71,13 +107,18 @@
           margin-left: 100% * $i/12;
         }
       }
+      .offset-col-small-laptop-#{$i}{
+        @media (min-width: 768px) and (max-width: 1020px){
+          width: 100% * $i/12;
+        }
+      }
       .offset-col-laptop-#{$i}{
-        @media (min-width: 768px) and (max-width: 1400px){
+        @media (min-width: 1020px) and (max-width: 1400px){
           margin-left: 100% * $i/12;
         }
       }
-      .offset-col-other-#{$i}{
-        @media (max-width: 1400px){
+      .offset-col-biggest-#{$i}{
+        @media (min-width: 1400px){
           margin-left: 100% * $i/12;
         }
       }

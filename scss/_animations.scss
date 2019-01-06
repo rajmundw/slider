@@ -1,0 +1,56 @@
+
+//initial animation
+.initial-inputs-animation{
+  animation-name: bouncing;
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+//animation steps
+@keyframes bouncing {
+
+  100% {
+    transform: translate(0px,0%);
+  }
+}
+
+//animation to change page
+.rotate-page{
+  animation-name: rotate;
+  transition: 1s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  transform-style: preserve-3d;
+}
+
+//opeinieng menu animation
+.opening-menu{
+  transform-origin:101% 50%;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+  transition: 1s;
+}
+
+//animation to changing category of photo category detail
+.slide-animation{
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+  transition: 1.5s;
+}
+
+
+@media (min-width: 570px) and (max-width: 768px){
+  //opeinieng menu animation
+  .opening-menu{
+    transform-origin:97% 50%;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    transition: 1s;
+  }
+}

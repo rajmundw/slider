@@ -1,0 +1,68 @@
+@media (max-width: 768px) {
+  .parent-page-numbers-parent {
+    display: flex;
+    justify-content: center;
+    .page-numbers-parent {
+      margin-top: 100px;
+      margin-bottom: 75px;
+      .active-page {
+        margin: auto;
+        background: transparent;
+        border: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        font-family: 'Aguafina Script', cursive;
+        font-size: 20px;
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .active-page-sibling {
+        height: 2px;
+        width: 25px;
+        display: block;
+        background: black;
+        float: left;
+        margin-top: 10px;
+      }
+      .page-numbers {
+        background: transparent;
+        border: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        font-family: 'Aguafina Script', cursive;
+        font-size: 20px;
+        letter-spacing: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .parent-page-numbers-parent {
+    .page-numbers-parent {
+      margin-top: 100px;
+      margin-bottom: 75px;
+    }
+  }
+}
+
+@media (min-width: 570px) and (max-width: 768px) {
+  .parent-page-numbers-parent {
+    .page-numbers-parent {
+      margin-top: 85px;
+      margin-bottom: 75px;
+      .active-page {
+        font-size: 30px;
+      }
+      .active-page-sibling {
+        height: 3px;
+        width: 35px;
+        margin-top: 16px;
+      }
+      .page-numbers {
+        font-size: 30px;
+      }
+    }
+  }
+}

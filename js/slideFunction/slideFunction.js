@@ -4,6 +4,7 @@ const slideFunction = () =>{
 
 
     slideBarLeft.addEventListener("touchstart",()=>{
+        console.log("left")
         const categoryContainer =  document.querySelector('.category-container')
         const currentTranslation=categoryContainer.style.transform
         // add animation class

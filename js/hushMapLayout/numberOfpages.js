@@ -1,10 +1,9 @@
 import pagination from '../pagination/pagination'
 import menuEvent from '../hushMapLayout/menuEvent'
 import numberOfElemetnsOnPage from '../pagination/numberOfElementOnPage'
-
+import resizeFunction from '../resizeFunction/resize'
 
 const numberOfPages= (categoryContainer,event,type)=>{
-
 
     let activePages=''
 
@@ -98,10 +97,64 @@ const numberOfPages= (categoryContainer,event,type)=>{
                 //if number of pages is not equal to number of elements also without changing
                 activePagesValue=document.querySelector('.active-page').innerText
             }
-        }else if(type==='addNewElement'){
+        }else if(type="resize" && typeof event==="undefined"){
+            activePagesValue=document.querySelector('.active-page').innerText
+
+            if(activePagesValue>numberOfPages){
+                //add animation class
+                pageContainer.classList.add('rotate-page')
+                let rotation=0
+                //set activ page value
+                activePagesValue=document.querySelector('.active-page').innerText
+
+                currentRotation=document.querySelectorAll('.page-container')[0].style.transform
+                currentRotation=parseInt(currentRotation.substr(8))
+
+                //rotate by 90 deg
+                rotation=currentRotation-90
+
+                pageContainer.style.transform=`rotateY(${rotation}deg)`
+
+                //change active page value
+                activePagesValue = "1"
+
+                //time out to do not see when layout is changing
+                setTimeout(()=>{
+
+                    document.querySelector('.active-page').innerText=activePagesValue
+
+                    if(document.querySelectorAll('.page-container')[0].style.transform){
+                        currentRotation=document.querySelectorAll('.page-container')[0].style.transform
+                        currentRotation=parseInt(currentRotation.substr(8))
+                    }
+                    //next rotation step
+                    rotation=currentRotation-90
+                    pagination(categoryContainer,hushMapContainer,activePagesValue,numberOfPages)
+                    hushMapContainer.style.transform=`rotateY(${rotation}deg)`
+                    setTimeout(()=>{
+                        //rotate page elements by 180 deg to see it on proper way
+                        pageContainer.style.transform=`rotateY(${rotation}deg)`
+                    },100)
+                },1000)
+                setTimeout(()=>{
+                    resizeFunction("lastPage")
+
+                },2000)
+            }else{
+                activePagesValue=document.querySelector('.active-page').innerText
+            }
+
+        } else if(type==='addNewElement'){
             //on add new element event active page stay this same
             activePagesValue=document.querySelector('.active-page').innerText
-        } else{
+
+        }else if(type==='update'){
+            //on add new element event active page stay this same
+            activePagesValue="1"
+            console.log("update")
+
+        }else{
+            console.log("update")
             // in other events as change category delete all category and sort page is 1
             activePagesValue='1'
         }
