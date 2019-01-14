@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+
   .parent-page-numbers-parent {
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@
       }
     }
   }
-}
+
 
 @media (max-width: 300px) {
   .parent-page-numbers-parent {
@@ -47,7 +47,7 @@
   }
 }
 
-@media (min-width: 570px) and (max-width: 768px) {
+@media (min-width: 570px) and (max-width: 1800px) {
   .parent-page-numbers-parent {
     .page-numbers-parent {
       margin-top: 85px;
@@ -62,6 +62,27 @@
       }
       .page-numbers {
         font-size: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  .parent-page-numbers-parent {
+    .page-numbers-parent {
+      position: absolute;
+      bottom:0;
+      .active-page {
+        font-size: 3vh;
+      }
+      .active-page-sibling {
+        height: 0.3vh;
+        width: 3.5vh;
+        margin-top: 1.6vh;
+      }
+      .page-numbers {
+        font-size: 3vh;
+        letter-spacing: 1vh;
       }
     }
   }

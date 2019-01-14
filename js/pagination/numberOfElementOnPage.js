@@ -40,7 +40,7 @@ const numberOfElementOnPage = () =>{
             numberOfElements=defaultNumberOfElements
             margitnBottomCategoryContainer=0
         }
-    }else if(window.innerWidth<=768 && window.innerWidth>570){
+    }else if(window.innerWidth<=950 && window.innerWidth>570){
         const hedaerHeight=document.querySelector(".hush-map-header").getBoundingClientRect().bottom+30
         const numberOfPageHeight=206
         const defaultContainerHegiht=701
@@ -49,21 +49,34 @@ const numberOfElementOnPage = () =>{
         console.log(defaultPageHeight,windowHeight,hedaerHeight)
         if(defaultPageHeight<windowHeight){
             const additionalElements=Math.floor((windowHeight-defaultPageHeight)/ulHeight)
-            numberOfElements=additionalElements+defaultNumberOfElements
+            numberOfElements=additionalElements+defaultNumberOfElements-1
             margitnBottomCategoryContainer=windowHeight-defaultPageHeight-155*additionalElements
         }else{
             //if emptyspace < 0  defaul list visible element
             numberOfElements=4
             margitnBottomCategoryContainer=0
         }
-    }else if(window.innerWidth<=1020 && window.innerWidth>768){
-        numberOfElements=5
-
-    }else if(window.innerWidth<=1400 && window.innerWidth>1020){
-        numberOfElements=5
+    }else if(window.innerWidth<=1800 && window.innerWidth>950){
+        const hedaerHeight=document.querySelectorAll(".hush-map-header")[0].offsetTop+document.querySelectorAll(".hush-map-header")[0].clientHeight+50
+        const numberOfPageHeight=161
+        const defaultContainerHegiht=600
+        const defaultPageHeight=defaultContainerHegiht+numberOfPageHeight+hedaerHeight
+        console.log(document.querySelectorAll(".hush-map-header"))
+        const ulHeight=150
+        console.log(document.querySelectorAll(".hush-map-header")[0].offsetTop)
+        console.log(defaultPageHeight,windowHeight,hedaerHeight)
+        if(defaultPageHeight<windowHeight){
+            const additionalElements=Math.floor((windowHeight-defaultPageHeight)/ulHeight)
+            numberOfElements=additionalElements+defaultNumberOfElements-1
+            margitnBottomCategoryContainer=windowHeight-defaultPageHeight-150*additionalElements
+        }else{
+            //if emptyspace < 0  defaul list visible element
+            numberOfElements=4
+            margitnBottomCategoryContainer=0
+        }
 
     }else {
-        numberOfElements=5
+        numberOfElements=4
     }
 
     elementToReturn.push(numberOfElements,margitnBottomCategoryContainer)

@@ -52,9 +52,12 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
         }else if(window.innerWidth>300 && window.innerWidth<=570){
             document.querySelector('.category-container').style.height=`${310+(numberOfElementsOnPage-5)*55}px`
             document.querySelector('.page-numbers-parent').style.marginTop=`${100+marginTop}px`
-        }else if(window.innerWidth>570 && window.innerWidth<=768){
+        }else if(window.innerWidth>570 && window.innerWidth<=1020){
             document.querySelector('.category-container').style.height=`${700+(numberOfElementsOnPage-4)*155}px`
             document.querySelector('.page-numbers-parent').style.marginTop=`${85+marginTop}px`
+        }else if(window.innerWidth>1020 && window.innerWidth<=1800){
+            document.querySelector('.category-container').style.height=`${600+(numberOfElementsOnPage-4)*150}px`
+            document.querySelector('.page-numbers-parent').style.marginTop=`${40+marginTop}px`
         }
     }
 

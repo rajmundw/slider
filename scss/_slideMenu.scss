@@ -16,12 +16,25 @@
   }
 }
 
-@media (min-width: 570px) and (max-width: 768px) {
+@media (min-width: 570px) and (max-width: 1800px) {
   .slide-container {
     display: none;
   }
   .slide {
     font-size: 35px;
+    display: none;
+    div:first-of-type {
+      text-align: right;
+    }
+  }
+}
+
+@media(min-width: 1800px) {
+  .slide-container {
+    display: none;
+  }
+  .slide {
+    font-size: 3.5vh;
     display: none;
     div:first-of-type {
       text-align: right;

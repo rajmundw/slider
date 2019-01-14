@@ -42,7 +42,7 @@ const createHushMapLayout=(newCategory,categoryArray,categoryNodeList,initialInp
         //remove initial inputs
         initialInputs = document.querySelector('.initial-inputs-container')
         document.querySelector('.initial-inputs-container').remove()
-        document.querySelector('.intrance-info').remove()
+        document.querySelector('.intrance-info').parentElement.remove()
 
 
         //create opened menu and set value of inputsAndButtonsArray on returned element from function
@@ -136,7 +136,7 @@ const createHushMapLayout=(newCategory,categoryArray,categoryNodeList,initialInp
         } else if (window.innerWidth > 300 && window.innerWidth <= 570 && window.innerHeight > 706) {
             document.querySelector('.page-container').style.height = `${window.innerHeight}px`
 
-        } else if (window.innerWidth <= 768 && window.innerWidth > 570 && window.innerHeight > 1050) {
+        } else if (window.innerWidth <= 1020 && window.innerWidth > 570 && window.innerHeight > 1050) {
             document.querySelector('.page-container').style.height = `${window.innerHeight}px`
         }
     }
@@ -148,7 +148,7 @@ const createHushMapLayout=(newCategory,categoryArray,categoryNodeList,initialInp
     }else if(window.innerWidth>300 && window.innerWidth<=570 && window.innerHeight>706){
         document.querySelector('.page-container').style.height=``
 
-    }else if(window.innerWidth<=768 && window.innerWidth>570 && window.innerHeight>1050){
+    }else if(window.innerWidth<=1020 && window.innerWidth>570 && window.innerHeight>1050){
         document.querySelector('.page-container').style.height=``
         document.querySelector('.slide').style.display = "none"
         document.querySelector('.hush-map-header').style.marginTop="170px"

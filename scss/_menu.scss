@@ -1,4 +1,7 @@
 @media (max-width: 570px) {
+  .close-menu-laptop-layout{
+    display:none
+  }
   .menu {
     z-index: 2;
     position: fixed;
@@ -24,8 +27,9 @@
   }
   .opened-menu {
     width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, .9);
-    position: fixed;
+    position: absolute;
     top: 0;
     transform: translateX(100%);
     ul {
@@ -154,6 +158,9 @@
 }
 
 @media (min-width: 570px) and (max-width: 768px) {
+  .close-menu-laptop-layout{
+    display:none
+  }
   .menu {
     z-index: 2;
     position: fixed;
@@ -179,8 +186,9 @@
   }
   .opened-menu {
     width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, .9);
-    position: fixed;
+    position: absolute;
     top: 0;
     transform: translateX(100%);
     ul {
@@ -303,6 +311,522 @@
         color: white;
         width: 220px;
         margin: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1020px) {
+  .close-menu-laptop-layout{
+    display:none
+  }
+  .menu {
+    z-index: 2;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    div {
+      width: 30px;
+      height: 6px;
+      background: black;
+      border-radius: 10px;
+    }
+    .opening-menu-middle-element {
+      width: 0%
+    }
+  }
+  .opened-menu {
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0, .9);
+    position: absolute;
+    top: 0;
+    right:0;
+    transform: translateX(100%);
+    ul {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      margin-top: 100px;
+      padding-left: 0px;
+      li {
+        display: block;
+        margin-bottom: 15px;
+        color: white;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        font-size: 45px;
+      }
+      .initial-inputs-container {
+        margin-bottom: 0vh;
+        position: relative;
+        .category-label {
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 40px;
+          margin-top: 0px;
+          color: white;
+          input {
+            border-bottom: white solid 2px;
+            font-size: 30px;
+            color: white;
+          }
+        }
+        .number-label {
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 40px;
+          margin-top: 2vh;
+          color: white;
+          input {
+            border-bottom: white solid 2px;
+            color: white;
+            font-size: 30px;
+          }
+        }
+        .search-button-container {
+          position: inherit;
+          top: 20px;
+          .search-button {
+            padding-top: 0px;
+            background: black;
+            border: 2px solid white;
+            font-size: 35px;
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+            color: white;
+            width: 150px;
+            margin: auto;
+          }
+        }
+
+        .search-button:hover {
+          cursor: pointer;
+        }
+        #error-massage {
+          margin-top: 5px;
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 40px;
+          color: red;
+          min-height: 72px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          text-align: center;
+        }
+      }
+      .category-select {
+        background: black;
+        border: 2px solid white;
+        font-size: 40px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        margin: auto;
+        option {
+          background: black;
+          color: white;
+          font-size: 20px;
+        }
+      }
+      .sorting-select {
+        background: black;
+        border: 2px solid white;
+        font-size: 40px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        margin: auto;
+        option {
+          background: black;
+          color: white;
+          font-size: 20px;
+        }
+      }
+      .add-category {
+        background: black;
+        border: 2px solid white;
+        font-size: 40px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        width: 240px;
+        margin: auto;
+      }
+      .delete-category {
+        background: black;
+        border: 2px solid white;
+        font-size: 40px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        width: 220px;
+        margin: auto;
+      }
+    }
+  }
+
+}
+
+@media (min-width: 1020px) and (max-width: 1800px) {
+  .menu{
+    display: none;
+  }
+  .close-menu-laptop-layout{
+    display:none;
+    position: absolute;
+    top:120px;
+    right: 20px;
+    display: none;
+    z-index: 50;
+    div {
+      width: 30px;
+      height: 5px;
+      background: white;
+      border-radius: 10px;
+      transform-origin: 61% 49%
+    }
+    div:first-of-type{
+      transform: rotate(-45deg);
+    }
+    div:last-of-type{
+      transform: rotate(45deg);
+    }
+  }
+  .opened-menu{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 0%;
+    background: rgba(0 , 0, 0, .9);
+    ul {
+      background: white;
+      margin-top: 0;
+      position: fixed;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      text-decoration: none;
+      padding-left: 0px;
+      border-bottom: 2px solid black;
+      z-index: 5;
+      width: 100%;
+      li {
+        display: block;
+        color: black;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        font-size: 40px;
+        margin-top: 24.5px;
+        margin-bottom: 24.5px;
+      }
+      .initial-inputs-container {
+        margin-bottom: 0vh;
+        position: absolute;
+        top: 300px;
+        .category-label {
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 40px;
+          margin-top: 0px;
+          color: white;
+          input {
+            width: 400px;
+            margin-left: 50px;
+            border-bottom: white solid 2px;
+            font-size: 40px;
+            color: white;
+          }
+        }
+        .number-label {
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 40px;
+          margin-top: 2vh;
+          color: white;
+          input {
+            width: 400px;
+            margin-left: 50px;
+            border-bottom: white solid 2px;
+            color: white;
+            font-size: 40px;
+          }
+        }
+        .search-button-container {
+          position: inherit;
+          top: 250px;
+          .search-button {
+            background: black;
+            border: 2px solid white;
+            font-size: 40px;
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+            color: white;
+            width: 250px;
+            margin: auto;
+          }
+        }
+
+        .search-button:hover {
+          cursor: pointer;
+        }
+        #error-massage {
+          margin-top: 20px;
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 40px;
+          color: red;
+          min-height: 52px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          text-align: center;
+        }
+      }
+      .category-select {
+        position: absolute;
+        top: 400px;
+        background: black;
+        border: 2px solid white;
+        font-size: 40px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        margin: auto;
+        option {
+          background: black;
+          color: white;
+          font-size: 40px;
+        }
+      }
+      .sorting-select {
+        position: absolute;
+        top: 400px;
+        background: black;
+        border: 2px solid white;
+        font-size: 40px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        margin: auto;
+        option {
+          background: black;
+          color: white;
+          font-size: 40px;
+        }
+      }
+      .add-category {
+        position: absolute;
+        top: 400px;
+        background: black;
+        border: 2px solid white;
+        font-size: 40px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        width: 250px;
+        margin: auto;
+      }
+      .delete-category {
+        position: absolute;
+        top: 400px;
+        background: black;
+        border: 2px solid white;
+        font-size: 40px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        width: 250px;
+        margin: auto;
+
+      }
+    }
+  }
+}
+@media (min-width: 1800px) {
+  .menu{
+    display: none;
+  }
+  .close-menu-laptop-layout{
+    display:none;
+    position: absolute;
+    top:13vh;
+    right: 2vh;
+    display: none;
+    z-index: 50;
+    div {
+      width: 3vh;
+      height: 0.5vh;
+      background: white;
+      border-radius: 10px;
+      transform-origin: 61% 49%
+    }
+    div:first-of-type{
+      transform: rotate(-45deg);
+    }
+    div:last-of-type{
+      transform: rotate(45deg);
+    }
+  }
+  .opened-menu{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 0%;
+    background: rgba(0 , 0, 0, .9);
+    ul {
+      background: white;
+      margin-top: 0;
+      position: fixed;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      text-decoration: none;
+      padding-left: 0px;
+      border-bottom: 0.2vh solid black;
+      z-index: 5;
+      width: 100%;
+      li {
+        display: block;
+        color: black;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        font-size: 4vh;
+        margin-top: 2.45vh;
+        margin-bottom: 2.45vh;
+      }
+      .initial-inputs-container {
+        margin-bottom: 0vh;
+        position: absolute;
+        top: 30vh;
+        .category-label {
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 4vh;
+          margin-top: 0px;
+          color: white;
+          input {
+            width: 40vh;
+            margin-left: 5vh;
+            border-bottom: white solid 0.2vh;
+            font-size: 4vh;
+            color: white;
+          }
+        }
+        .number-label {
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 4vh;
+          margin-top: 2vh;
+          color: white;
+          input {
+            width: 40vh;
+            margin-left: 5vh;
+            border-bottom: white solid 0.2vh;
+            color: white;
+            font-size: 4vh;
+          }
+        }
+        .search-button-container {
+          position: inherit;
+          top: 25vh;
+          .search-button {
+            background: black;
+            border: 0.2vh solid white;
+            font-size: 40vh;
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+            color: white;
+            width: 25vh;
+            margin: auto;
+          }
+        }
+
+        .search-button:hover {
+          cursor: pointer;
+        }
+        #error-massage {
+          margin-top: 2vh;
+          font-family: 'Amatic SC', cursive;
+          font-weight: 700;
+          font-size: 4vh;
+          color: red;
+          min-height: 5.2vh;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          text-align: center;
+        }
+      }
+      .category-select {
+        position: absolute;
+        top: 40vh;
+        background: black;
+        border: 0.2vh solid white;
+        font-size: 4vh;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        margin: auto;
+        option {
+          background: black;
+          color: white;
+          font-size: 4vh;
+        }
+      }
+      .sorting-select {
+        position: absolute;
+        top: 40vh;
+        background: black;
+        border: 0.2vh solid white;
+        font-size: 4vh;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        margin: auto;
+        option {
+          background: black;
+          color: white;
+          font-size: 4vh;
+        }
+      }
+      .add-category {
+        position: absolute;
+        top: 30vh ;
+        background: black;
+        border: 0.2vh solid white;
+        font-size: 4vh;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        width: 25vh;
+        margin: auto;
+      }
+      .delete-category {
+        position: absolute;
+        top: 40vh;
+        background: black;
+        border: 0.2vh solid white;
+        font-size: 4vh;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        color: white;
+        width: 25vh;
+        margin: auto;
+
       }
     }
   }

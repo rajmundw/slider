@@ -1,5 +1,5 @@
 import deleteCategoryElement from '../deleteFunction/deleteCategoryElement'
-
+import createPhotoSlider from "../functions/createPhotoSlider"
 const createPhotoDetailsList = (categoryContainer,newCategoryElementsArray,selectCategory,selectTypeOfSorting,deleteCategoryButton,addNewElementToCategoryButton,hushMapContainer) =>{
     // counter which set number to container element
     let idCounterUlElement=1
@@ -59,22 +59,20 @@ const createPhotoDetailsList = (categoryContainer,newCategoryElementsArray,selec
             const photoElement=document.createElement('li')
             photoElement.id='photo'
             photoElement.setAttribute('regularUrl',categoryElement.urls.regular)
+            photoElement.setAttribute('width',categoryElement.width)
+            photoElement.setAttribute('height',categoryElement.height)
             const photoDiv=document.createElement('div')
             const photoImg=document.createElement('img')
 
 
             //add lisner to img element to show biggest photo
-            photoImg.addEventListener("touchstart",()=>{
-                    const src=event.target.src
-                    document.querySelector('.photo-slider').classList.add('opened-photo')
-                    const img=document.querySelector('.img-parent').children[0]
-                    img.src=`${src}`
-                }
-            )
+            photoImg.addEventListener("click",()=>{
+                createPhotoSlider(event)
+            })
 
             // add event to close biggest photo
             const closeIcon=document.querySelector('.close-slider')
-            closeIcon.addEventListener('touchstart',()=>{
+            closeIcon.addEventListener('click',()=>{
                 document.querySelector('.photo-slider').classList.remove('opened-photo')
             })
 

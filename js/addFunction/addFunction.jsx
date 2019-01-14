@@ -16,8 +16,12 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
     if(event.target.innerText!=="Submit") {
         event.target.innerText="Submit"
 
+        if(window.innerWidth<=1020){
+            document.querySelector(".back-to-menu-from-add-element").style.display="block"
+        }
         // if add input does not exist
         if(!document.getElementById('containerAddInputs')) {
+
 
             const hushMapContainer = document.querySelector('#hush-map')
 
@@ -46,10 +50,13 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
 
                 dataInput.disabled="disabled"
                 const openedMenuDiv=document.querySelector('.opened-menu')
-                //hidden all menu ul elements
-                openedMenuDiv.children[0].childNodes.forEach(element=>{
-                    element.style.display='none'
-                })
+                if(window.innerWidth<=1020) {
+                    //hidden all menu ul elements
+                    openedMenuDiv.children[0].childNodes.forEach(element => {
+                        element.style.display = 'none'
+                    })
+
+                }
 
 
                 const containerAddInput=document.getElementById('containerAddInputs')
@@ -61,6 +68,10 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
                 })
                 //make visible
                 document.getElementById('calendar').style.display="block"
+                if(window.innerWidth>1020){
+                    document.querySelector(".add-category").style.display="none"
+                    document.querySelector(".opened-menu-list").style.display="flex"
+                }
 
             })
 
@@ -114,18 +125,30 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
 
             const addButton=document.querySelector('.add-category')
             addButton.parentNode.insertBefore(containerAddInputs, addButton.nextSibling)
+
+            document.querySelector('.add-category').style.top="300px"
         }
 
-        openedMenuDiv.childNodes[1].childNodes.forEach(element=>{
-            if(element.nodeName==="LI"){
-                element.style.display='none'
-            }
-        })
-        document.getElementById('containerAddInputs').style.display='block'
-        document.getElementById('containerAddInputs').nextSibling.style.display='block'
+        if( window.innerWidth<=1020){
 
+            openedMenuDiv.childNodes[1].childNodes.forEach(element=>{
+                if(element.nodeName==="LI"){
+                    element.style.display='none'
+                }
+            })
+        }
+        if(window.innerWidth>1020){
+            document.querySelector(".opened-menu-list").style.display="flex"
+        }
+        if(window.innerWidth<=1800){
+            document.querySelector('.add-category').style.top="300px"
+        }else{
+            document.querySelector('.add-category').style.top="30vh"
+        }
+        document.getElementById('containerAddInputs').style.display='block'
     }else{
 
+        document.querySelector('.add-category').style.top="300px"
         const likesValue=document.getElementById('likesInput').value
         const widthValue=document.getElementById('widthInput').value
         const heightValue=document.getElementById('heightInput').value
@@ -220,6 +243,7 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
         })
 
     }
+    document.querySelector('.add-category').style.display="block"
 
     //run sort function to have proper element list on current typeo of sorting
     sortFunction(event,selectCategory,typeOfSotring)

@@ -12,7 +12,8 @@ const initialLayout=()=>{
     }else if(window.innerWidth>300 && window.innerWidth<=570 && window.innerHeight>706){
         document.querySelector('.page-container').style.height=`${window.innerHeight}px`
 
-    }else if(window.innerWidth<=768 && window.innerWidth>570 && window.innerHeight>1050){
+
+    }else if(window.innerWidth<=1020 && window.innerWidth>570 && window.innerHeight>1050){
         document.querySelector('.page-container').style.height=`${window.innerHeight}px`
     }
 

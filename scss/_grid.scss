@@ -70,7 +70,7 @@
         }
       }
       .col-laptop-#{$i} {
-        @media (min-width: 1020px) and (max-width: 1400px) {
+        @media (min-width: 1020px) and (max-width: 1800px) {
           width: 100% * $i/12;
         }
         &:before, &:after{
@@ -80,7 +80,7 @@
         }
       }
       .col-biggest-#{$i}{
-        @media (min-width: 1400px){
+        @media (min-width: 1800px){
           width: 100% * $i/12;
         }
         &:before, &:after{
@@ -109,16 +109,16 @@
       }
       .offset-col-small-laptop-#{$i}{
         @media (min-width: 768px) and (max-width: 1020px){
-          width: 100% * $i/12;
+          margin-left: 100% * $i/12;
         }
       }
       .offset-col-laptop-#{$i}{
-        @media (min-width: 1020px) and (max-width: 1400px){
+        @media (min-width: 1020px) and (max-width: 1800px){
           margin-left: 100% * $i/12;
         }
       }
       .offset-col-biggest-#{$i}{
-        @media (min-width: 1400px){
+        @media (min-width: 1800px){
           margin-left: 100% * $i/12;
         }
       }

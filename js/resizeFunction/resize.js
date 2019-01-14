@@ -1,7 +1,43 @@
 import numberOfPages from '../hushMapLayout/numberOfpages'
+import hideMenuOptions from "../hideMenuOptions/hideMenuOptions"
+import createPhotoSlider from "../functions/createPhotoSlider"
 const resizeFunction = (type) =>{
 
     window.addEventListener('resize',()=>{
+        const openedMenuDiv=document.querySelector('.opened-menu')
+        const menu=document.querySelector('.menu')
+        openedMenuDiv.classList.remove('opening-menu')
+        menu.childNodes[1].classList.remove('opening-menu')
+        menu.childNodes[3].classList.remove('opening-menu')
+        menu.childNodes[5].classList.remove('opening-menu')
+        menu.childNodes[1].style.transform='rotate(0deg)'
+        menu.childNodes[1].style.backgroundColor='black'
+        menu.childNodes[3].classList.remove('opening-menu-middle-element')
+        menu.childNodes[3].style.backgroundColor='black'
+        menu.childNodes[5].style.transform='rotate(0deg)'
+        menu.childNodes[5].style.backgroundColor='black'
+
+
+
+        if(document.querySelector(".photo-slider").classList.contains("opened-photo") ){
+            createPhotoSlider()
+        }
+        if(window.innerWidth<=1020){
+            document.querySelector(".opened-menu").style.height="100%"
+            document.querySelector(".opened-menu-list").style.position=""
+            hideMenuOptions(openedMenuDiv)
+        }else{
+            document.querySelector(".opened-menu").style.height="0%"
+            document.querySelector(".opened-menu-list").style.position="fixed"
+            document.querySelector(".close-menu-laptop-layout").style.display="none"
+            hideMenuOptions(openedMenuDiv)
+
+        }
+        if(document.querySelector(".add-category")) {
+            if (window.innerWidth <= 1020 && document.querySelector(".add-category").innerHTML === "submit") {
+                document.querySelector(".back-to-menu-from-add-element").style.display = "block"
+            }
+        }
 
         if(document.querySelector('#hush-map').classList.contains('initial')){
             if (window.innerWidth <= 300 && window.innerHeight > 901) {
@@ -10,7 +46,7 @@ const resizeFunction = (type) =>{
             } else if (window.innerWidth > 300 && window.innerWidth <= 570 && window.innerHeight > 706) {
                 document.querySelector('.page-container').style.height = `${window.innerHeight}px`
 
-            } else if (window.innerWidth <= 768 && window.innerWidth > 570 && window.innerHeight > 1050) {
+            } else if (window.innerWidth <= 1800 && window.innerWidth > 570 && window.innerHeight > 1050) {
                 document.querySelector('.page-container').style.height = `${window.innerHeight}px`
             }
         }
@@ -27,23 +63,35 @@ const resizeFunction = (type) =>{
                 document.querySelector('.page-container').style.height=``
                 document.querySelector('.slide').style.display="block"
             }
+
+            document.querySelector('.opened-menu').style.transform="translateX(100%)"
         }else if(window.innerWidth<=300){
             if(!document.querySelector('#hush-map').classList.contains('initial')){
                 document.querySelector('.page-container').style.height=``
                 document.querySelector('.slide').style.display="block"
             }
 
+            document.querySelector('.opened-menu').style.transform="translateX(100%)"
             document.querySelector('.hush-map-header').style.marginTop="130px"
-        }else if(window.innerWidth<=768 && window.innerWidth>570) {
+        }else if(window.innerWidth<=1020 && window.innerWidth>570) {
             if(!document.querySelector('#hush-map').classList.contains('initial')){
                 document.querySelector('.page-container').style.height=``
                 const headerHeight=  document.querySelector('.hush-map-header').getBoundingClientRect().bottom
             }
+
+            document.querySelector('.opened-menu').style.transform="translateX(100%)"
             document.querySelector('.slide').style.display="none"
             document.querySelector('.hush-map-header').style.marginTop="170px"
 
+        }else if(window.innerWidth<=1800 && window.innerWidth>1020){
+            document.querySelector('.slide').style.display="none"
+            document.querySelector('.hush-map-header').style.marginTop="170px"
+            document.querySelector('.opened-menu').style.transform=""
+        }else if(window.innerWidth>1800) {
+            document.querySelector('.slide').style.display = "none"
+            document.querySelector('.hush-map-header').style.marginTop = "15vh"
+            document.querySelector('.opened-menu').style.transform = ""
         }
-
 
         //small mobile layout slide and high propeities on resize
         if(window.innerWidth<=300){
@@ -77,7 +125,7 @@ const resizeFunction = (type) =>{
                 })
             }
         }
-        else if(window.innerWidth>570 && window.innerWidth<=768){
+        else if(window.innerWidth>570 && window.innerWidth<=1020){
 
             if(document.querySelector('.category-container') && document.querySelector('.category-container').style.transform) {
 
@@ -149,7 +197,7 @@ const resizeFunction = (type) =>{
                     numberOfPages(categoryContainer, '', "resize")
                 }
             }
-        }else if(window.innerWidth<=768 && window.innerWidth>570) {
+        }else if(window.innerWidth<=1800 && window.innerWidth>570) {
 
             document.querySelector('.slide').style.display="none"
             if (window.innerHeight > 1050) {
@@ -165,6 +213,11 @@ const resizeFunction = (type) =>{
                     numberOfPages(categoryContainer, '', "resize")
                 }
                 document.querySelector('.page-container').style.height = `${1050}px`
+            }
+        }else if(window.innerWidth<=1800){
+            if(document.querySelector(".category-container")) {
+                const categoryContainer=document.querySelector(".category-container")
+                numberOfPages(categoryContainer, '', "resize")
             }
         }
 

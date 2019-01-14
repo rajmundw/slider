@@ -110,7 +110,7 @@
 }
 
 
-@media (min-width: 570px) and (max-width: 768px) {
+@media (min-width: 570px) and (max-width: 1020px) {
 
   .initial-inputs-container {
     .category-label {
@@ -219,5 +219,266 @@
     color: white;
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (min-width: 1020px) and (max-width: 1800px) {
+
+  .initial-inputs-container {
+    .category-label {
+      margin-top: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      font-size: 40px;
+      input {
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+        border: none;
+        background: transparent;
+        width: calc(100% - 300px);
+        border-bottom: black solid 2px;
+        font-size: 30px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        outline: none;
+      }
+    }
+    .number-label {
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      font-size: 40px;
+      margin-top: 4vh;
+      font-family: 'Aguafina Script', cursive;
+      input {
+        width: calc(100% - 300px);
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+        border: none;
+        background: transparent;
+        border-bottom: black solid 2px;
+        font-size: 30px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        outline: none;
+      }
+    }
+    .search-button-container {
+      width: 100%;
+      position: absolute;
+      display: flex !important;
+      justify-content: center;
+      .search-button {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Aguafina Script', cursive;
+        padding-top: 7px;
+        /*
+        visibility: hidden;
+        */
+      }
+    }
+
+    .search-button:hover {
+      cursor: pointer;
+    }
+    #error-massage {
+      margin-top: 15px;
+      font-family: 'Amatic SC', cursive;
+      font-weight: 700;
+      font-size: 40px;
+      color: red;
+      min-height: 82px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: center;
+    }
+  }
+
+  .search-button-container {
+    width: 100%;
+    position: absolute;
+    display: flex !important;
+    justify-content: center;
+    bottom: 70px;
+    .search-button {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      text-align: center;
+      font-size: 40px;
+      font-family: 'Aguafina Script', cursive;
+      padding-top: 7px;
+      visibility: block;
+    }
+  }
+
+  .back-to-menu-from-add-category{
+    display: none;
+  }
+}
+
+@media (min-width: 1020px) and (max-width: 1350px) {
+
+  .initial-inputs-container {
+    .category-label {
+      margin-top: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 40px;
+      input {
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+        border: none;
+        background: transparent;
+        width: 80%;
+        border-bottom: black solid 2px;
+        font-size: 30px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        outline: none;
+        margin: auto;
+      }
+    }
+    .number-label {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 40px;
+      margin-top: 4vh;
+      font-family: 'Aguafina Script', cursive;
+      input {
+        width: 80%;
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+        border: none;
+        background: transparent;
+        border-bottom: black solid 2px;
+        font-size: 30px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        outline: none;
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+
+  .initial-inputs-container {
+    .category-label {
+      margin-top: 0vh;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      font-size: 4vh;
+      input {
+        margin-bottom: 1vh;
+        text-align: center;
+        display: block;
+        border: none;
+        background: transparent;
+        width: 60%;
+        border-bottom: black solid 0.2vh;
+        font-size: 3vh;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        outline: none;
+      }
+    }
+    .number-label {
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      font-size: 4vh;
+      margin-top: 4vh;
+      font-family: 'Aguafina Script', cursive;
+      input {
+        width: 45%;
+        margin-bottom: 1vh;
+        text-align: center;
+        display: block;
+        border: none;
+        background: transparent;
+        border-bottom: black solid 0.2vh;
+        font-size: 3vh;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        outline: none;
+      }
+    }
+    .search-button-container {
+      width: 100%;
+      position: absolute;
+      display: flex !important;
+      justify-content: center;
+      .search-button {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+        font-size: 2.5vh;
+        font-family: 'Aguafina Script', cursive;
+        padding-top: 0.7vh;
+        /*
+        visibility: hidden;
+        */
+      }
+    }
+
+    .search-button:hover {
+      cursor: pointer;
+    }
+    #error-massage {
+      margin-top: 1.5vh;
+      font-family: 'Amatic SC', cursive;
+      font-weight: 700;
+      font-size: 4vh;
+      color: red;
+      min-height: 8.2vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: center;
+    }
+  }
+
+  .search-button-container {
+    width: 100%;
+    position: absolute;
+    display: flex !important;
+    justify-content: center;
+    bottom: 7vh;
+    .search-button {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      text-align: center;
+      font-size: 4vh;
+      font-family: 'Aguafina Script', cursive;
+      padding-top: 0.7vh;
+      visibility: block;
+    }
+  }
+
+  .back-to-menu-from-add-category{
+    display: none;
   }
 }

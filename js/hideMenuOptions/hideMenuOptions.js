@@ -1,5 +1,4 @@
 const hideMenuOptions=(openedMenuDiv)=>{
-
     //make hidden inputs to add new element
     if(document.querySelector('#containerAddInputs')){
         document.querySelector('#containerAddInputs').style.display='none'

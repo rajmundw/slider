@@ -63,7 +63,6 @@ class App extends React.Component{
 
     //similar like above but increment number of months
     follwingMonth(){
-        console.log('aaa')
         currentMonth=currentMonth+1
         if(currentMonth>11){
             currentMonth=0
@@ -122,6 +121,9 @@ class App extends React.Component{
         document.getElementById('calendar').style.display='none'
         document.querySelector('.add-category').style.display="block"
         document.querySelector('.back-to-menu-from-add-element').style.display="block"
+        if(window.innerWidth>1020){
+            document.querySelector('.back-to-menu-from-add-element').style.display="none"
+        }
     }
 
     calendar(){

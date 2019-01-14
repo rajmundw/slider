@@ -39,6 +39,7 @@ const deleteAllCategory=(event,selectCategory,selectTypeOfSorting,deleteCategory
     }else{
         //remove pages numbers
         document.querySelector('.parent-page-numbers-parent').remove()
+        document.querySelector(".hush-map-header").innerHTML="No categories"
 
     }
 }

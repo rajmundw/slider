@@ -6,9 +6,6 @@ import resizeFunction from './resizeFunction/resize'
 
 
 
-//
-const menuDiv=document.querySelector('.opened-menu')
-menuDiv.style.height=`100vh`
 
 // search button
 const serchButton=document.querySelector('.search-button')

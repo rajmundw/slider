@@ -46,12 +46,14 @@
 }
 @media (max-width: 300px) {
   #containerAddInputs {
+    margin-left: 30px;
     label {
       display: flex;
+      justify-content: center;
       flex-direction: column;
       text-align: center;
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-left: 0px;
+      margin-right: 0px;
     }
     input {
       text-align: center;
@@ -64,7 +66,7 @@
   }
 }
 
-@media (min-width: 570px) and (max-width: 768px) {
+@media (min-width: 570px) and (max-width: 1020px) {
   #containerAddInputs {
     display: flex;
     flex-direction: column;
@@ -106,5 +108,103 @@
     color: white;
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1020px) {
+  #containerAddInputs {
+    label {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    #calendar1 {
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (min-width: 1020px) and (max-width: 1800px) {
+  #containerAddInputs {
+    position: absolute;
+    top:400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 30px;
+    label {
+      margin-top: 25px;
+      font-size: 40px;
+      font-family: 'Amatic SC', cursive;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+    }
+    input {
+      background: black;
+      border: 2px solid white;
+      font-size: 40px;
+      font-family: 'Amatic SC', cursive;
+      font-weight: 700;
+      color: white;
+    }
+    #calendar {
+      color: white;
+      font-family: 'Amatic SC', cursive;
+      font-weight: 700
+    }
+    #calendar1{
+      font-size: 45px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .back-to-menu-from-add-element{
+    display:none;
+  }
+}
+
+@media (min-width: 1800px) {
+  #containerAddInputs {
+    position: absolute;
+    top:40vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vh;
+    margin-right: 3vh;
+    label {
+      margin-top: 2.5vh;
+      font-size: 4vh;
+      font-family: 'Amatic SC', cursive;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+    }
+    input {
+      background: black;
+      border: 0,2vh solid white;
+      font-size: 4vh;
+      font-family: 'Amatic SC', cursive;
+      font-weight: 700;
+      color: white;
+    }
+    #calendar {
+      color: white;
+      font-family: 'Amatic SC', cursive;
+      font-weight: 700
+    }
+    #calendar1{
+      font-size: 4.5vh;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .back-to-menu-from-add-element{
+    display:none;
   }
 }

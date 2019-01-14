@@ -56,6 +56,8 @@ const deleteCategoryElement=(event,selectCategory,selectTypeOfSorting,deleteCate
                         }else{
                             //remove pages numbers
                             document.querySelector('.parent-page-numbers-parent').remove()
+                            document.querySelector(".hush-map-header").innerHTML="No categories"
+
                             if(document.querySelector('.slide-container')){
                                 document.querySelector('.left-slide-bar').style.display="none"
                                 document.querySelector('.right-slide-bar').style.display="none"
