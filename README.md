@@ -31,6 +31,12 @@
   <li>Zoom photos</li>
 </ul>
 
+<h2>Live:</h2>
+<ul>
+	<li>https://rajmundw.github.io/slider/</li>
+	<li>Preferred way of play application is installed on your devices</li>
+</ul>
+
 <h2>ToDo:</h2>
 <ul>
 	<li>improving css</li>
