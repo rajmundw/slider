@@ -1,4 +1,4 @@
-const hideMenuOnResize = () =>{
+const hideMenuOnResize = (openedMenuDiv,menu) =>{
 
     // on resize menu become hidden
     openedMenuDiv.classList.remove('opening-menu')

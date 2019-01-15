@@ -13,7 +13,7 @@ const resizeFunction = (type) =>{
         const openedMenuDiv=document.querySelector('.opened-menu')
         const menu=document.querySelector('.menu')
 
-        hideMenuOnResize(menu)
+        hideMenuOnResize(openedMenuDiv,menu)
 
         // set proper feature for zoom photo
         if(document.querySelector(".photo-slider").classList.contains("opened-photo") ){

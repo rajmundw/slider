@@ -68,13 +68,20 @@ const createPhotoDetailsList = (categoryContainer,newCategoryElementsArray,selec
             //add lisner to img element to show biggest photo
             photoImg.addEventListener("click",()=>{
                 createPhotoSlider(event)
+
             })
 
             // add event to close biggest photo
             const closeIcon=document.querySelector('.close-slider')
-            closeIcon.addEventListener('click',()=>{
-                document.querySelector('.photo-slider').classList.remove('opened-photo')
-            })
+
+            if(closeIcon.getAttribute("event")!=="clickEvent"){
+                closeIcon.addEventListener('click',()=>{
+
+                    const currentUrl=window.location.origin
+                    document.querySelector('.photo-slider').classList.remove('opened-photo')
+                })
+                closeIcon.setAttribute("event","clickEvent")
+            }
 
             photoImg.src=`${categoryElement.urls.small}`
             photoDiv.appendChild(photoImg)

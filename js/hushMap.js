@@ -5,7 +5,7 @@ import slideFunction from './slideFunction/slideFunction'
 import resizeFunction from './resizeFunction/resize'
 
 
-
+window.scrollTo(0, 0)
 
 // search button
 const serchButton=document.querySelector('.search-button')

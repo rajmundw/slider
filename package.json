@@ -1,11 +1,12 @@
 {
-  "name": "1_Przygotowanie_React",
+  "name": "Slider",
   "version": "1.0.0",
-  "description": "## Zadanie rozwiązywane z wykładowcą",
+  "description": "## Slider",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server --hot --inline"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "^2.1.1",
+    "webpack-dev-server": "^3.1.14",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
