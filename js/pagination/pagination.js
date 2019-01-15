@@ -4,18 +4,17 @@ import numberOfElemetnsOnPage from './numberOfElementOnPage'
 
 const pagination = (categoryContainer,hushMapContainer,activePage) =>{
     let tableHead=''
-    let ul=''
+    let ul=createListHeader()
     const numberOfElementsAndMargintTop = numberOfElemetnsOnPage()
     const numberOfElementsOnPage=numberOfElementsAndMargintTop[0]
     const numberOfElement=categoryContainer.childNodes.length-1
-    ul=createListHeader()
 
-    console.log(activePage,numberOfElement,numberOfElementsOnPage)
+
+    // checking case when was changed page size and on current active slider page is not any elemnt
     if(activePage*numberOfElementsOnPage>numberOfElement){
         activePage=Math.ceil(numberOfElement/numberOfElementsOnPage)
         document.querySelector(".active-page").innerHTML=activePage
     }
-
 
 
     // set everyone category container ul as flex
@@ -24,7 +23,6 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
             ul.style.display='flex'
         }
     })
-
 
 
     //display none element which should be show by pagination
@@ -46,25 +44,14 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
         }else{
             //else push as last child
             hushMapContainer.appendChild(categoryContainer)
-
         }
-
     }
     if(document.querySelector('.category-container')){
-
         // push as first child category header
         categoryContainer.insertBefore(ul, categoryContainer.childNodes[0])
-        if(window.innerWidth<=300){
-            document.querySelector('.category-container').style.height=`${470+(numberOfElementsOnPage-5)*90}px`
-        }else if(window.innerWidth>300 && window.innerWidth<=570){
-            document.querySelector('.category-container').style.height=`${310+(numberOfElementsOnPage-5)*55}px`
-        }else if(window.innerWidth>570 && window.innerWidth<=1020){
-            document.querySelector('.category-container').style.height=`${700+(numberOfElementsOnPage-4)*155}px`
-        }else if(window.innerWidth>1020 && window.innerWidth<=1800){
-            document.querySelector('.category-container').style.height=`${600+(numberOfElementsOnPage-4)*150}px`
-        }
     }
 
+    // function for small layout to changing slider element details
     slideHandler(categoryContainer)
 
     setTimeout(()=>{

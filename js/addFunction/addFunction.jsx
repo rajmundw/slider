@@ -16,6 +16,7 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
     if(event.target.innerText!=="Submit") {
         event.target.innerText="Submit"
 
+        //this funcionality only for burger menu
         if(window.innerWidth<=1020){
             document.querySelector(".back-to-menu-from-add-element").style.display="block"
         }
@@ -68,6 +69,7 @@ const addFunction=(event,selectCategory,selectTypeOfSorting,deleteCategoryButton
                 })
                 //make visible
                 document.getElementById('calendar').style.display="block"
+
                 if(window.innerWidth>1020){
                     document.querySelector(".add-category").style.display="none"
                     document.querySelector(".opened-menu-list").style.display="flex"

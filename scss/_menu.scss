@@ -566,6 +566,7 @@
         .search-button-container {
           position: inherit;
           top: 250px;
+          margin-top: 100px;
           .search-button {
             background: black;
             border: 2px solid white;
@@ -575,7 +576,6 @@
             color: white;
             width: 250px;
             margin: auto;
-            margin-top: 100px;
           }
         }
 
