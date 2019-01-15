@@ -575,6 +575,7 @@
             color: white;
             width: 250px;
             margin: auto;
+            margin-top: 100px;
           }
         }
 
@@ -746,7 +747,7 @@
           .search-button {
             background: black;
             border: 0.2vh solid white;
-            font-size: 40vh;
+            font-size: 4vh;
             font-family: 'Amatic SC', cursive;
             font-weight: 700;
             color: white;
@@ -784,7 +785,7 @@
         option {
           background: black;
           color: white;
-          font-size: 4vh;
+          font-size: 1vh;
         }
       }
       .sorting-select {
@@ -800,12 +801,12 @@
         option {
           background: black;
           color: white;
-          font-size: 4vh;
+          font-size: 1vh;
         }
       }
       .add-category {
         position: absolute;
-        top: 30vh ;
+        top: 30vh !important;
         background: black;
         border: 0.2vh solid white;
         font-size: 4vh;
