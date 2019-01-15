@@ -1,6 +1,8 @@
 import numberOfPages from '../hushMapLayout/numberOfpages'
 import hideMenuOptions from "../hideMenuOptions/hideMenuOptions"
 import createPhotoSlider from "../functions/createPhotoSlider"
+import setPageHeight from "../functions/setPageHeight"
+
 const resizeFunction = (type) =>{
 
     window.addEventListener('resize',()=>{
@@ -39,17 +41,7 @@ const resizeFunction = (type) =>{
             }
         }
 
-        if(document.querySelector('#hush-map').classList.contains('initial')){
-            if (window.innerWidth <= 300 && window.innerHeight > 901) {
-                document.querySelector('.page-container').style.height = `${window.innerHeight}px`
-
-            } else if (window.innerWidth > 300 && window.innerWidth <= 570 && window.innerHeight > 706) {
-                document.querySelector('.page-container').style.height = `${window.innerHeight}px`
-
-            } else if (window.innerWidth <= 1800 && window.innerWidth > 570 && window.innerHeight > 1050) {
-                document.querySelector('.page-container').style.height = `${window.innerHeight}px`
-            }
-        }
+        setPageHeight()
 
 
         if(document.querySelector(".category-container")) {
@@ -60,14 +52,12 @@ const resizeFunction = (type) =>{
         document.querySelector('.hush-map-header').style.marginTop="130px"
         if(window.innerWidth>300 && window.innerWidth<=570){
             if(!document.querySelector('#hush-map').classList.contains('initial')){
-                document.querySelector('.page-container').style.height=``
                 document.querySelector('.slide').style.display="block"
             }
 
             document.querySelector('.opened-menu').style.transform="translateX(100%)"
         }else if(window.innerWidth<=300){
             if(!document.querySelector('#hush-map').classList.contains('initial')){
-                document.querySelector('.page-container').style.height=``
                 document.querySelector('.slide').style.display="block"
             }
 
@@ -75,7 +65,6 @@ const resizeFunction = (type) =>{
             document.querySelector('.hush-map-header').style.marginTop="130px"
         }else if(window.innerWidth<=1020 && window.innerWidth>570) {
             if(!document.querySelector('#hush-map').classList.contains('initial')){
-                document.querySelector('.page-container').style.height=``
                 const headerHeight=  document.querySelector('.hush-map-header').getBoundingClientRect().bottom
             }
 

@@ -97,7 +97,8 @@ const numberOfPages= (categoryContainer,event,type)=>{
                 //if number of pages is not equal to number of elements also without changing
                 activePagesValue=document.querySelector('.active-page').innerText
             }
-        }else if(type="resize" && typeof event==="undefined"){
+        }else if(type==="resize" && typeof event==="undefined"){
+            console.log("resize")
             activePagesValue=document.querySelector('.active-page').innerText
 
             if(activePagesValue>numberOfPages){
@@ -144,7 +145,25 @@ const numberOfPages= (categoryContainer,event,type)=>{
                 activePagesValue=document.querySelector('.active-page').innerText
             }
 
-        } else if(type==='addNewElement'){
+        }else if(type==="resize" && typeof event==="string"){
+          /*  const categoryContainer=document.querySelector(".category-container")
+            let counter=0
+            const categoryContainerArrayLength=categoryContainer.childNodes.length
+            const activePage=document.querySelector('.active-page').innerText
+            categoryContainer.childNodes.forEach(ul=>{
+                console.log(ul)
+             if(ul.style.display==="flex"){
+                 counter++
+             }
+            })
+            console.log(counter)
+            if(activePage*counter>=categoryContainerArrayLength){
+                activePagesValue=`${Math.ceil(categoryContainerArrayLength/counter)}`
+            }else{*/
+                activePagesValue=document.querySelector('.active-page').innerText
+            /*}*/
+
+        }else if(type==='addNewElement'){
             //on add new element event active page stay this same
             activePagesValue=document.querySelector('.active-page').innerText
 
@@ -160,6 +179,7 @@ const numberOfPages= (categoryContainer,event,type)=>{
         }
         document.querySelector('.parent-page-numbers-parent').remove()
     }else{
+        console.log("AAA")
         // when we blick search button in initial layout
         activePagesValue='1'
     }

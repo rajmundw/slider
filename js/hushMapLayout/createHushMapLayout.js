@@ -129,27 +129,10 @@ const createHushMapLayout=(newCategory,categoryArray,categoryNodeList,initialInp
         //push previous category to have it in memory
         categoryNodeList.push(categoryContainer)
 
-
-        if (window.innerWidth <= 300 && window.innerHeight > 901) {
-            document.querySelector('.page-container').style.height = `${window.innerHeight}px`
-
-        } else if (window.innerWidth > 300 && window.innerWidth <= 570 && window.innerHeight > 706) {
-            document.querySelector('.page-container').style.height = `${window.innerHeight}px`
-
-        } else if (window.innerWidth <= 1020 && window.innerWidth > 570 && window.innerHeight > 1050) {
-            document.querySelector('.page-container').style.height = `${window.innerHeight}px`
-        }
     }
     //set min height for page container because is biggest then height in initial layout
 
-    if(window.innerWidth<=300 && window.innerHeight>901){
-        document.querySelector('.page-container').style.height=``
-
-    }else if(window.innerWidth>300 && window.innerWidth<=570 && window.innerHeight>706){
-        document.querySelector('.page-container').style.height=``
-
-    }else if(window.innerWidth<=1020 && window.innerWidth>570 && window.innerHeight>1050){
-        document.querySelector('.page-container').style.height=``
+   if(window.innerWidth<=1020 && window.innerWidth>570 && window.innerHeight>1050){
         document.querySelector('.slide').style.display = "none"
         document.querySelector('.hush-map-header').style.marginTop="170px"
     }

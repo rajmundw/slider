@@ -1,23 +1,15 @@
+import setPageHeight from "../functions/setPageHeight"
+
 const initialLayout=()=>{
     const inputsContainer=document.querySelectorAll('.initial-inputs-container')
     const inputsContainerTopOffset=inputsContainer[0].getBoundingClientRect().top
     const inputsContainerHeight=inputsContainer[0].getBoundingClientRect().height
     const allDistanceToTransalte=inputsContainerTopOffset+inputsContainerHeight
 
+    setPageHeight()
 
 
-    if(window.innerWidth<=300 && window.innerHeight>901){
-        document.querySelector('.page-container').style.height=`${window.innerHeight}px`
-
-    }else if(window.innerWidth>300 && window.innerWidth<=570 && window.innerHeight>706){
-        document.querySelector('.page-container').style.height=`${window.innerHeight}px`
-
-
-    }else if(window.innerWidth<=1020 && window.innerWidth>570 && window.innerHeight>1050){
-        document.querySelector('.page-container').style.height=`${window.innerHeight}px`
-    }
-
- /*   //translate initial inputs to bacome hidden to animation
+    //translate initial inputs to bacome hidden to animation
     inputsContainer[0].style.transform=`translateY(${-allDistanceToTransalte}px)`
 
     let textToAnimation=document.querySelectorAll('.intrance-info span')
@@ -81,7 +73,7 @@ const initialLayout=()=>{
             }
             textToAnimation[`${counter}`].style.color="black"
         },250)
-    },2000)*/
+    },2000)
 }
 
 export default initialLayout

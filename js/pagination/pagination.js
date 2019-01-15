@@ -7,9 +7,16 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
     let ul=''
     const numberOfElementsAndMargintTop = numberOfElemetnsOnPage()
     const numberOfElementsOnPage=numberOfElementsAndMargintTop[0]
-    const marginTop=numberOfElementsAndMargintTop[1]
-
+    const numberOfElement=categoryContainer.childNodes.length-1
     ul=createListHeader()
+
+    console.log(activePage,numberOfElement,numberOfElementsOnPage)
+    if(activePage*numberOfElementsOnPage>numberOfElement){
+        activePage=Math.ceil(numberOfElement/numberOfElementsOnPage)
+        document.querySelector(".active-page").innerHTML=activePage
+    }
+
+
 
     // set everyone category container ul as flex
     categoryContainer.childNodes.forEach((ul)=>{
@@ -17,6 +24,8 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
             ul.style.display='flex'
         }
     })
+
+
 
     //display none element which should be show by pagination
     categoryContainer.childNodes.forEach((ul,index)=>{
@@ -46,18 +55,13 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
         // push as first child category header
         categoryContainer.insertBefore(ul, categoryContainer.childNodes[0])
         if(window.innerWidth<=300){
-
             document.querySelector('.category-container').style.height=`${470+(numberOfElementsOnPage-5)*90}px`
-            document.querySelector('.page-numbers-parent').style.marginTop=`${100+marginTop}px`
         }else if(window.innerWidth>300 && window.innerWidth<=570){
             document.querySelector('.category-container').style.height=`${310+(numberOfElementsOnPage-5)*55}px`
-            document.querySelector('.page-numbers-parent').style.marginTop=`${100+marginTop}px`
         }else if(window.innerWidth>570 && window.innerWidth<=1020){
             document.querySelector('.category-container').style.height=`${700+(numberOfElementsOnPage-4)*155}px`
-            document.querySelector('.page-numbers-parent').style.marginTop=`${85+marginTop}px`
         }else if(window.innerWidth>1020 && window.innerWidth<=1800){
             document.querySelector('.category-container').style.height=`${600+(numberOfElementsOnPage-4)*150}px`
-            document.querySelector('.page-numbers-parent').style.marginTop=`${40+marginTop}px`
         }
     }
 
