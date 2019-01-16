@@ -25,7 +25,6 @@ const router = () => {
                     hideMenuOptions(openedMenuDiv,"hashChange")
 
                 }
-
                 break;
             }
             case "#menu":{

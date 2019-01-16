@@ -11,6 +11,8 @@ window.scrollTo(0, 0)
 window.location.hash=""
 
 
+
+
 // search button
 const serchButton=document.querySelector('.search-button')
 // event on click to get data from api

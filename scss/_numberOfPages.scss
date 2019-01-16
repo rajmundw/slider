@@ -69,7 +69,13 @@
     }
   }
 }
-
+@media (min-width: 570px) and (max-width: 950px) {
+  .parent-page-numbers-parent {
+    .page-numbers-parent {
+      margin-top: 0px !important;
+    }
+  }
+}
 @media (min-width: 1800px) {
   .parent-page-numbers-parent {
     position: absolute;

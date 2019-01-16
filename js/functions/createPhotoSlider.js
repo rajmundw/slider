@@ -35,36 +35,29 @@ const createPhotoSlider = (event) =>{
     const img=document.querySelector('.img-parent').children[0]
     img.src=`${src}`
     if(imgParent.getAttribute("width")>imgParent.getAttribute("height")){
-        const currentImgWidth=Math.ceil(document.querySelector(".img-parent").children[0].getBoundingClientRect().width)
-        const currentImgHeight=Math.ceil(document.querySelector(".img-parent").children[0].getBoundingClientRect().height)
 
-        if(currentImgWidth>=Math.ceil(window.innerWidth*0.8) && currentImgHeight==Math.ceil(window.innerHeight*0.9)) {
-            img.style.width = "100%"
-            img.style.height = "auto"
-        }else if(currentImgWidth===Math.ceil(window.innerWidth*0.8) && currentImgHeight>=Math.ceil(window.innerHeight*0.9)){
+        const windowWidth=window.innerWidth*0.8
+        const windowHeight=window.innerHeight*0.9
+        let photoWidth=windowWidth
+        let photoHeight=(photoWidth/imgParent.getAttribute("width"))*imgParent.getAttribute("height")
+
+        if(photoHeight>windowHeight){
             img.style.height = "100%"
             img.style.width = "auto"
-
-        }else if(currentImgWidth>=Math.ceil(window.innerWidth*0.8)){
-            img.style.width = "100%"
-            img.style.height = "auto"
         }else{
-            img.style.height = "100%"
-            img.style.width = "auto"
-        }
-    }else{
-        const currentImgWidth=Math.ceil(document.querySelector(".img-parent").children[0].getBoundingClientRect().width)
-        const currentImgHeight=Math.ceil(document.querySelector(".img-parent").children[0].getBoundingClientRect().height)
-
-
-        if(currentImgWidth>=Math.ceil(window.innerWidth*0.8) && currentImgHeight==Math.ceil(window.innerHeight*0.9)) {
             img.style.width = "100%"
             img.style.height = "auto"
-        }else if(currentImgWidth===Math.ceil(window.innerWidth*0.8) && currentImgHeight>=Math.ceil(window.innerHeight*0.9)){
-            img.style.height = "100%"
-            img.style.width = "auto"
+        }
 
-        }else if(currentImgWidth>=Math.ceil(window.innerWidth*0.8)){
+    }else{
+
+        const windowWidth=window.innerWidth*0.8
+        const windowHeight=window.innerHeight*0.9
+        let photoHeight=windowHeight
+        let photoWidth=(photoHeight/imgParent.getAttribute("height"))*imgParent.getAttribute("width")
+
+        if(photoWidth>windowWidth){
+
             img.style.width = "100%"
             img.style.height = "auto"
         }else{
