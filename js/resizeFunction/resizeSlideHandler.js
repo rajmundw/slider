@@ -5,13 +5,13 @@ const reiszeSlideHandler = () =>{
         if(!document.querySelector('#hush-map').classList.contains('initial')){
             document.querySelector('.slide').style.display="block"
         }
-
+        document.querySelector(".hush-map-header").style.marginTop="130px"
         document.querySelector('.opened-menu').style.transform="translateX(100%)"
     }else if(window.innerWidth<=300){
         if(!document.querySelector('#hush-map').classList.contains('initial')){
             document.querySelector('.slide').style.display="block"
         }
-
+        document.querySelector(".hush-map-header").style.marginTop="130px"
         document.querySelector('.opened-menu').style.transform="translateX(100%)"
         document.querySelector('.hush-map-header').style.marginTop="130px"
     }else if(window.innerWidth<=1020 && window.innerWidth>570) {
