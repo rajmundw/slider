@@ -39,6 +39,6 @@
 
 <h2>ToDo:</h2>
 <ul>
-	<li>Routing in Vanilla JS</li>
+	<li>Improve routing in Vanilla JS</li>
 	<li>improving css</li>
 </ul>
