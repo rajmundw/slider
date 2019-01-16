@@ -1,4 +1,4 @@
-const hideMenuOptions=(openedMenuDiv)=>{
+const hideMenuOptions=(openedMenuDiv,type)=>{
     //make hidden inputs to add new element
     if(document.querySelector('#containerAddInputs')){
         document.querySelector('#containerAddInputs').style.display='none'
@@ -13,6 +13,10 @@ const hideMenuOptions=(openedMenuDiv)=>{
             element.style.display='none'
         }else{
             element.style.display='block'
+            if(type!=="hashChange" && type!=="close"){
+                element.setAttribute("click","false")
+            }
+
         }
     })
     //set inner text of this button on initial

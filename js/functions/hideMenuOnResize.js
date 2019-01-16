@@ -1,5 +1,10 @@
 const hideMenuOnResize = (openedMenuDiv,menu) =>{
 
+    if(document.querySelector(".opened-menu").style.transform==="translateX(0%)" || document.querySelector(".opened-menu").style.height==="100%" ){
+        window.location.hash=""
+    }
+
+
     // on resize menu become hidden
     openedMenuDiv.classList.remove('opening-menu')
     menu.childNodes[1].classList.remove('opening-menu')

@@ -1,12 +1,20 @@
 import hideMenuOptions from '../hideMenuOptions/hideMenuOptions'
 
-const menuEvent = () =>{
-
+const menuEvent = (event,type) =>{
+    const eventHandler =event.toString().substr(8,10)
     const openedMenuDiv=document.querySelector('.opened-menu')
     const menu=document.querySelector('.menu')
 
-
+    if(eventHandler==="TouchEvent"){
+        console.log(window.location.hash)
+        if(window.location.hash==="#menu"){
+            window.location.hash=""
+        }else{
+            window.location.hash="menu"
+        }
+    }
     const click=()=>{
+
         if(menu.childNodes[1].style.transform==='rotate(-45deg)'){
 
 
@@ -44,7 +52,17 @@ const menuEvent = () =>{
         }
     }
 
-    click()
+    if(eventHandler==="TouchEvent"){
+        click()
+    }
+
+    if(type==="mainPage" && document.querySelector(".opened-menu").style.transform==="translateX(0%)"){
+        click()
+
+    }else if(type==="menuPage" && document.querySelector(".opened-menu").style.transform==="translateX(100%)"){
+        click()
+
+    }
 }
 
 export default menuEvent

@@ -9,7 +9,9 @@ const initialLayout=()=>{
     setPageHeight()
 
     //make a search button as hidden
+/*
     document.querySelector(".search-button").style.visibility="hidden"
+*/
 
     //translate initial inputs to bacome hidden to animation
     inputsContainer[0].style.transform=`translateY(${-allDistanceToTransalte}px)`
