@@ -7,9 +7,10 @@ const pagination = (categoryContainer,hushMapContainer,activePage) =>{
     let ul=createListHeader()
     const numberOfElementsAndMargintTop = numberOfElemetnsOnPage()
     const numberOfElementsOnPage=numberOfElementsAndMargintTop[0]
-    const numberOfElement=categoryContainer.childNodes.length-1
+    const numberOfElement=categoryContainer.childNodes.length
 
-
+    console.log(categoryContainer.childNodes)
+    console.log(numberOfElement,numberOfElementsOnPage)
     // checking case when was changed page size and on current active slider page is not any elemnt
     if(activePage*numberOfElementsOnPage>numberOfElement){
         activePage=Math.ceil(numberOfElement/numberOfElementsOnPage)

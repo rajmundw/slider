@@ -46,7 +46,7 @@ const numberOfPages= (categoryContainer,event,type)=>{
     if(document.querySelector('.parent-page-numbers-parent')) {
         //rotation in deleteCategoryElement case
         if(type ==='deleteCategoryElement'){
-
+            console.log("numberOfpages")
             //if active page is last page
             if(numberOfPages===numberOfElements/numberOfElementsOnPage){
                 //if inner text is other than 1 (first page is not active)

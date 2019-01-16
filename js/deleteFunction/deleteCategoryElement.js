@@ -21,6 +21,7 @@ const deleteCategoryElement=(event,selectCategory,selectTypeOfSorting,deleteCate
                 if(ul.id===categoryUlIdToDelete){
                     //if category array has last element before remove it (equal 2 because first element is header)
                     if(category.childNodes.length===2){
+                        console.log("2")
                         //set select category on empty value
                         selectCategory.selectedIndex=0
 
@@ -66,6 +67,7 @@ const deleteCategoryElement=(event,selectCategory,selectTypeOfSorting,deleteCate
 
 
                     }else{
+                        console.log("more")
                         //remove element
                         ul.remove()
                         numberOfPages(category,event,'deleteCategoryElement')
